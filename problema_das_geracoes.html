@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<script>
+
+  // function pulaLinha(){
+  // document.write("<br>");
+  //}
+  // function mostra(frase){
+  // document.write(frase);
+  // pulaLinha();
+  //}
+  function exibeTitulo(titulo) {
+    document.write("<h1>Problema de gerações </h1>");
+    pulaLinha();
+  }
+
+  // let anosPassados = 522
+  // let cadaGeracao = 28
+
+  //let mediaGeracoes = anosPassados/cadaGeracao  
+
+  exibeTitulo();
+  // mostra("A média de gerações desde 1500 é " + mediaGeracoes);
+
+
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+
+  let idadeMediaQuandoTemFilhos = 28;
+  let anoAtual = 2016;
+
+  let quantidadeDeGeracoes = (anoAtual - 1500) / idadeMediaQuandoTemFilhos;
+
+  mostra(quantidadeDeGeracoes);
+</script>

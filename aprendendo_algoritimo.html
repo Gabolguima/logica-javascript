@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<h1>Média de notas do aluno(a)!</h1>
+<script>
+	let nome = prompt("Qual o seu nome?");
+
+	let nota1 = parseFloat(prompt("Entre com a nota do 1° bimestre"));
+	let nota2 = parseFloat(prompt("Entre com a nota do 2° bimestre"));
+	let nota3 = parseFloat(prompt("Entre com a nota do 3° bimestre"));
+
+	let media = Math.round((nota1 + nota2 + nota3) / 3);
+
+	function mostra(frase) {
+		document.write("<br>");
+		document.write(frase);
+	}
+
+	function exibeMedia() {
+		if (media >= 6) {
+			alert("Aprovado");
+		} else {
+			alert("Reprovado");
+		}
+	}
+
+	exibeMedia();
+
+	mostra("A média do aluno(a) " + nome + " é " + media + "!");
+
+
+</script>

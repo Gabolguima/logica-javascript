@@ -1,0 +1,79 @@
+<meta charset="UTF-8">
+<!-- -------------------------CÓDIGO COM ERRO -->
+<h1>CONSOLIDANDO CONHECIMENTOS3</h1>
+
+Olá, Meu nome é Gabriel e
+esta é a sequência de alguns conhecimentos que aprendi.
+<br>
+Aplicabilidades e conhecimentos que você pode encontrar nos cursos Alura.<br>
+Para saber mais clique <a href=http:\\www.alura.com.br>aqui</a><br><br>
+Participe você também dos cursos <h3>ALURA</h3>
+"campo de texto e botão - melhorando a usabilidade."<br>
+
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    for (var contador = 1; contador <= 2; contador++) {
+        alert("Alura! Aprendendo sempre.");
+    }
+
+    for (var linha = 1; linha <= 1; linha++) {
+
+        for (var coluna = 1; coluna <= 74; coluna++) {
+            document.write("*");
+        }
+        pulaLinha();
+        pulaLinha();
+    }
+</script>
+
+Vamos testar sua sorte?
+Pense num numero de 1 a 10, se for o que pensei, te digo.
+<br>
+<input />
+<button>DIGITE SEU NÚMERO</button>
+
+<script>
+    var tentativas = 1;
+    var numeroPensado = Math.round(Math.random() * 10);
+    var input = document.querySelector("input");
+    var button = document.querySelector("button");
+    input.focus();
+    input.value = "";
+
+    function verifica() {
+
+        while (tentativas <= 3) {
+
+            if (input.value == numeroPensado) {
+                mostra("<h1><b>Parabéns! Você ACERTOU!</b></h1>");
+                break;
+            } else {
+                if (input.value > numeroPensado) {
+                    alert("Que pena, infelizmente você errou, dica seu chute foi maior.");
+                    input.focus();
+                    input.value = "";
+                } else {
+                    alert("Que pena, infelizmente você errou, dica seu chute foi menor.");
+                    input.focus();
+                    input.value = "";
+                    tentativas++;
+                }
+            }
+            if (tentativas > 4) {
+                mostra("Infelizmente suas tentativas acabaram.");
+                break;
+            }
+        }
+    }
+    button.onclick = verifica;
+    mostra("");
+    mostra("fim");
+</script>

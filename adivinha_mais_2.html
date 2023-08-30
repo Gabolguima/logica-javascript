@@ -1,0 +1,84 @@
+<meta charset="UTF-8">
+
+<input>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+	function sorteia() {
+
+		return Math.round(Math.random() * 10);
+	}
+
+	function sorteiaNumeros(quantidade) {
+
+		let segredos = [];
+
+		let numero = 1;
+
+		while (numero <= quantidade) {
+
+			let numeroAleatorio = sorteia();
+
+			if (numeroAleatorio !== 0) {
+
+				let achou = false;
+
+				for (let posicao = 0; posicao < segredos.length; posicao++) {
+					if (segredos[posicao] == numeroAleatorio) {
+						achou = true;
+						break;
+					}
+				}
+
+				if (achou == false) {
+					segredos.push(numeroAleatorio);
+					numero++;
+				}
+			}
+
+
+		}
+
+		return segredos;
+	}
+
+	let segredos = sorteiaNumeros(3);
+
+
+	console.log(segredos);
+
+	let input = document.querySelector("input");
+
+	input.focus();
+
+
+	function verifica() {
+
+		let achou = false;
+
+		for (let posicao = 0; posicao < segredos.length; posicao++) {
+
+			if (input.value == segredos[posicao]) {
+
+				alert("Você acertou!");
+				achou = true;
+				break;
+			}
+		}
+
+		if (achou == false) {
+			alert("Você errou!");
+		}
+
+
+		input.value = ""; // deixa o campo input em branco quando eu acertar ou errar. "input.value = entre com o valor"
+		input.focus(); // faz piscar o campo de entrada "input.focus = foco na entrada"
+	}
+
+	let button = document.querySelector("button");
+
+	button.onclick = verifica; // onclick traduzido para o pt.br é igual a ''click do botão'' e verifica é a função verifica(); sendo chamada. Mas sem o () pois da erro de syntax
+
+
+</script>

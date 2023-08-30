@@ -1,0 +1,79 @@
+<meta charset="UTF-8">
+
+<h1>**********ADIVINHE MEUS NÚMEROS**********</h1>
+<hr>
+<h3>Tenho 5 números aleatórios de 1 a 20, isso mesmo, <big>VINTE!</big></h3>
+<h2>Tente adivinhá-los quais são!!!</h2>
+<hr>
+<input /><br>
+<button>Clique aqui para conferir!</button>
+
+<script>
+
+	function sorteia() {
+
+		return Math.round(Math.random() * 20);
+	}
+
+	function sorteiaNumeros(quantidade) {
+
+		let numbers = [];
+
+		let contador = 1;
+
+		while (contador <= quantidade) {
+
+			let numeroAleatorio = sorteia();
+
+			if (numeroAleatorio != 0) {
+
+				let achou = false;
+
+				for (posicao = 0; posicao < numbers.length; posicao++) {
+					if (numbers[posicao] == numeroAleatorio) {
+						achou = true;
+						break;
+					}
+
+				}
+				if (achou == false) {
+					numbers.push(numeroAleatorio);
+					contador++;
+				}
+
+			}
+		}
+		return numbers;
+	}
+
+	let numbers = sorteiaNumeros(5);
+
+	let input = document.querySelector("input");
+	input.focus();
+
+	function verifica() {
+
+		let achou = false;
+
+		for (let posicao = 0; posicao < numbers.length; posicao++) {
+			if (input.value == numbers[posicao]) {
+				alert("Parabéns, você acertou!");
+				achou = true;
+				break;
+			}
+
+		}
+		if (achou == false) {
+			alert("Que pena, você errou!");
+		}
+
+		input.value = "";
+		input.focus();
+
+	}
+
+	let button = document.querySelector("button");
+
+	button.onclick = verifica;
+
+</script>

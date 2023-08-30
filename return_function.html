@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaImc(altura, peso) {
+
+        let imc = peso / (altura * altura);
+        return imc;
+
+    }
+
+
+    let imcFlavio = calculaImc(1.71, 63);
+    let imcInacio = calculaImc(1.72, 68);
+
+    mostra("Imc do Flavio " + Math.round(imcFlavio));
+    mostra("Imc do Amigo " + Math.round(imcInacio));
+
+    pulaLinha();
+
+    if (imcFlavio > imcInacio) {
+
+        pulaLinha();
+
+        mostra("<b> o flavio esta com imc mas alto do que o Inacio . ");
+    }
+
+    else {
+        mostra("O Inacio esta com o imc mas alto que o Flavio.!!</b>")
+    }
+
+
+</script>
